@@ -1,6 +1,6 @@
 {
   "name": "Nebula (custom)",
-  "version": "0.1",
+  "version": "0.2",
   "slug": "nebula-new",
   "description": "Nebula overlay network node with support for newer certificate format.",
   "url": "https://github.com/SamIAm789/ha-addon-nebula",
