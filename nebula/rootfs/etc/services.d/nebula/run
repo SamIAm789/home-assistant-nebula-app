@@ -1,6 +1,14 @@
 #!/usr/bin/with-contenv bashio
 set -euo pipefail
 
+echo "=== NEBULA NETWORK DEBUG ==="
+ip addr
+echo "=== ROUTES ==="
+ip route
+echo "=== RULES ==="
+ip rule
+echo "=== END NETWORK DEBUG ==="
+
 # Read configured path from add-on options
 CONFIG_PATH="$(bashio::config 'config_path')"
 
