@@ -14,5 +14,20 @@ CONFIG_PATH="$(bashio::config 'config_path')"
 
 bashio::log.info "Starting Nebula with config: ${CONFIG_PATH}"
 
-# Exec nebula so it becomes the service process
-exec /usr/local/bin/nebula -config "${CONFIG_PATH}"
+# exec /usr/local/bin/nebula -config "${CONFIG_PATH}"
+
+/usr/local/bin/nebula -config "${CONFIG_PATH}" &
+NEBULA_PID=$!
+
+sleep 2
+
+echo "=== NETWORK AFTER NEBULA START ==="
+ip addr show tun0 || true
+echo "=== ROUTES AFTER NEBULA START ==="
+ip route
+echo "=== ROUTES TO NEBULA PEERS ==="
+ip route get 100.100.0.2 || true
+ip route get 100.100.0.1 || true
+echo "=== END POST-START DEBUG ==="
+
+wait "$NEBULA_PID"
