@@ -10,7 +10,7 @@ RUN apk add --no-cache ca-certificates bash curl tar
 WORKDIR /tmp
 RUN curl -sSL \
     -o nebula.tar.gz \
-    https://github.com/slackhq/nebula/releases/download/v${NEBULA_VERSION}/nebula-${NEBULA_ARCH}.tar.gz \
+    https://github.com/slackhq/nebula/releases/download/v${NEBULA_VERSION}/nebula-${NEBULA_ARCH}.tar.gz && \
     tar xzf nebula.tar.gz && \
     mv nebula nebula-cert /usr/local/bin/ && \
     chmod +x /usr/local/bin/nebula /usr/local/bin/nebula-cert && \
