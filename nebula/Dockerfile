@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/home-assistant/amd64-addon-base:14.3.2
+ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:3.24-2026.06.1
 FROM ${BUILD_FROM}
 
 ARG NEBULA_VERSION=1.11.1
