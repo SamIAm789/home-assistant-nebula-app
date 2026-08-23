@@ -1,0 +1,8 @@
+{
+  "name": "Nebula Custom Add-ons",
+  "url": "https://github.com/SamIam789/haos-nebula",
+  "maintainer": "SamIam789",
+  "addons": {
+    "nebula": "nebula"
+  }
+}
