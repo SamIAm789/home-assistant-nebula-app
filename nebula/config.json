@@ -1,0 +1,20 @@
+{
+  "name": "Nebula (custom)",
+  "version": "1.11.1.0",
+  "slug": "nebula-new",
+  "description": "Nebula overlay network node with support for newer certificate format.",
+  "url": "https://github.com/SamIAm789/ha-addon-nebula",
+  "startup": "services",
+  "boot": "auto",
+  "arch": ["amd64"],
+  "init": false,
+  "host_network": true,
+  "privileged": ["NET_ADMIN"],
+  "map": ["config:rw", "ssl:rw"],
+  "options": {
+    "config_path": "/ssl/nebula/config.yml"
+  },
+  "schema": {
+    "config_path": "str"
+  }
+}
