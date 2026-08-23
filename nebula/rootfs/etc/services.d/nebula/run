@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bashio
+set -euo pipefail
+
+# Read configured path from add-on options
+CONFIG_PATH="$(bashio::config 'config_path')"
+
+bashio::log.info "Starting Nebula with config: ${CONFIG_PATH}"
+
+# Exec nebula so it becomes the service process
+exec /usr/local/bin/nebula -config "${CONFIG_PATH}"
